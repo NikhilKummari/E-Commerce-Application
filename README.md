@@ -95,7 +95,7 @@ Run the application. Tables will be created automatically.
 
 Clone the repository:
 
-git clone https://github.com/your-username/ecommerce-application.git
+git@github.com:NikhilKummari/E-Commerce-Application.git
 
 Navigate into the project:
 
