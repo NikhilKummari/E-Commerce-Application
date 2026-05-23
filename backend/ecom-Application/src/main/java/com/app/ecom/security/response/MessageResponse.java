@@ -1,24 +1,18 @@
 package com.app.ecom.security.response;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.util.List;
-
+import org.hibernate.annotations.SecondaryRow;
 
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
-public class UserInfoResponse {
-
-
-    private Long id;
-//    private String jwtToken;
-    private String username;
-    private List<String> roles;
+@AllArgsConstructor
+public class MessageResponse {
+    private String message;
 
 
 }
