@@ -79,7 +79,8 @@ public class AuthController {
                 .toList();
 
         UserInfoResponse response = new UserInfoResponse(userDetails.getId() ,
-                userDetails.getUsername(), roles);
+                userDetails.getUsername(), roles
+        );
 
         return ResponseEntity.ok().header(HttpHeaders.SET_COOKIE,
                 jwtCookie.toString())

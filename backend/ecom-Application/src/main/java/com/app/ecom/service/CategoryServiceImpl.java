@@ -7,6 +7,7 @@ import com.app.ecom.model.Category;
 import com.app.ecom.payload.CategoryRequest;
 import com.app.ecom.payload.CategoryResponse;
 import com.app.ecom.repository.CategoryRepository;
+import jakarta.transaction.Transactional;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -70,6 +71,7 @@ public class CategoryServiceImpl implements CategoryService{
         return modelMapper.map(savedCategory, CategoryRequest.class);
     }
 
+    @Transactional
     @Override
     public CategoryRequest deleteCategory(Long categoryId) {
 

@@ -24,21 +24,17 @@ public class Product {
     private Long productId;
 
     @NotBlank
-    @Size(min = 3, message = "Product name must contains at least 3 characters")
+    @Size(min = 3, message = "Product name must contain atleast 3 characters")
     private String productName;
-
     private String image;
 
     @NotBlank
-    @Size(min = 10, message = "Product description must contains at least 10 characters")
+    @Size(min = 6, message = "Product description must contain atleast 6 characters")
     private String description;
-
-
-
     private Integer quantity;
-    private Double price;
-    private Double discount;
-    private Double specialPrice;
+    private double price;
+    private double discount;
+    private double specialPrice;
 
     @ManyToOne
     @JoinColumn(name = "category_id")
@@ -48,6 +44,6 @@ public class Product {
     @JoinColumn(name = "seller_id")
     private User user;
 
-    @OneToMany(mappedBy = "product", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, fetch = FetchType.EAGER ,orphanRemoval = true)
+    @OneToMany(mappedBy = "product", cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.EAGER)
     private List<CartItem> products = new ArrayList<>();
 }

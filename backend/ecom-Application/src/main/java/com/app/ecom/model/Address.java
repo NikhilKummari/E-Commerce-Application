@@ -47,9 +47,9 @@ public class Address {
     @Size(min = 6, message = "pincode must contains at least 6 characters")
     private String pincode;
 
-    @ToString.Exclude
-    @ManyToMany(mappedBy = "addresses")
-    private List<User> users = new ArrayList<>();
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
 }
