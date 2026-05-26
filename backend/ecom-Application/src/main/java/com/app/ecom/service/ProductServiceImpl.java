@@ -75,7 +75,7 @@ public class ProductServiceImpl implements ProductService {
             Product savedProduct = productRepository.save(product);
             return modelMapper.map(savedProduct, ProductDTO.class);
         } else {
-            throw new APIException(STR."Product with name \{productDTO.getProductName()} already exists in category \{category.getCategoryName()}");
+            throw new APIException("Product with name " + productDTO.getProductName() + "already exists in category " + category.getCategoryName());
         }
     }
 
